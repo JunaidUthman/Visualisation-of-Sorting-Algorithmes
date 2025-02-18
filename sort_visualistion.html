@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting Visualization</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 400px;
+      background-color: #1f2937;
+      border: 3px solid #4b5563;
+      margin-top: 2rem;
+      border-radius: 0.75rem;
+      padding: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .bar {
+      width: 30px;
+      margin: 0 3px;
+      background: linear-gradient(to top, #10b981, #34d399);
+      transition: height 0.3s ease-in-out;
+      align-self: flex-end;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-gray-800 via-gray-900 to-gray-950 text-gray-100">
+  <header class="bg-gradient-to-r from-gray-700 to-gray-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-4xl font-extrabold">Sorting Visualization</h1>
+      <nav>
+        <ul class="flex space-x-6 text-lg font-semibold">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto mt-10 px-6">
+    <!-- Options Panel -->
+    <div class="bg-gray-800 shadow-lg rounded-xl p-6 mb-10 border border-gray-700">
+      <h2 class="text-2xl font-bold text-teal-400 mb-4">Choose Sorting Options</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div>
+          <label for="size" class="block text-teal-400 font-medium mb-1">Array Size</label>
+          <input type="number" id="size" class="w-full border border-teal-500 rounded-lg px-3 py-2 bg-gray-700 text-white focus:ring-2 focus:ring-teal-400 outline-none" min="5" max="20" value="20">
+        </div>
+        <div>
+          <label for="ordre" class="block text-teal-400 font-medium mb-1">Order</label>
+          <select id="ordre" class="w-full border border-teal-500 rounded-lg px-3 py-2 bg-gray-700 text-white focus:ring-2 focus:ring-teal-400 outline-none">
+            <option value="croissant">Ascending</option>
+            <option value="decroissant">Descending</option>
+          </select>
+        </div>
+        <div>
+          <label for="type" class="block text-teal-400 font-medium mb-1">Sorting Type</label>
+          <select id="type" class="w-full border border-teal-500 rounded-lg px-3 py-2 bg-gray-700 text-white focus:ring-2 focus:ring-teal-400 outline-none">
+            <option value="merge">Merge Sort</option>
+            <option value="quick">Quick Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="bulle">Bubble Sort</option>
+            <option value="insertion">Insertion Sort</option>
+          </select>
+        </div>
+        <div>
+          <label for="speed" class="block text-teal-400 font-medium mb-1">Speed (ms)</label>
+          <input type="number" id="speed" class="w-full border border-teal-500 rounded-lg px-3 py-2 bg-gray-700 text-white focus:ring-2 focus:ring-teal-400 outline-none" value="100" min="10">
+        </div>
+        <div class="flex space-x-3">
+          <button id="submit" class="w-full bg-teal-500 text-white font-bold rounded-lg px-4 py-2 hover:bg-teal-600 transition shadow-md">Start Sorting</button>
+          <button id="togglePause" class="w-full bg-red-600 text-white font-bold rounded-lg px-4 py-2 hover:bg-red-700 transition shadow-md">Pause</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sorting Visualization Container -->
+    <div id="bars" class="w-full"></div>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300 text-center py-4 mt-10">
+    <p>&copy; Created By Junaid Uthman.</p>
+  </footer>
+
+  <script src="sort_visualistion.js"></script>
+</body>
+</html>
